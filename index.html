@@ -2,257 +2,301 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KNOCKPLAY FIFA TOURNAMENT</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="5tg.png" />
+  <link rel="icon" type="image/png" href="assets/5tg.png" />
   <meta name="description" content="Register now for the KNOCKPLAY FIFA TOURNAMENT and compete with the best. Limited slots available!">
 
   <style>
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(135deg, #002d13, #004d25, #008c42);
-      color: #ffffff;
+      background: linear-gradient(to right, #030838, #00031d);
+      color: #fff;
       padding: 20px;
       height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    display: flex;
+    justify-content: center; /* centers horizontally */
+    align-items: center; 
     }
 
     .container {
-      max-width: 800px;
-      background: rgba(255, 255, 255, 0.07);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 30px;
-      border-radius: 20px;
-      box-shadow: 0 0 30px rgba(0, 255, 102, 0.2);
-      animation: fadeInUp 1s ease-in-out;
-    }
+  max-width: 800px;
+  background: #030838;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 0 10px rgb(237, 250, 63), 0 0 20px rgb(4, 4, 199);
+  animation: fadeInUp 1s ease-in-out;
+}
+
 
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    img[alt="logo"], img[alt="KNOCKPLAY Tournament Logo"] {
-      max-width: 30%;
-      height: auto;
-      display: block;
-      margin: 1rem auto;
-      filter: drop-shadow(0 0 10px #aaffaa);
-    }
+
+    @keyframes glow {
+  0% { box-shadow: 0 0 5px #00f0FF; }
+  50% { box-shadow: 0 0 25px #00f0FF; }
+  100% { box-shadow: 0 0 5px #00f0FF; }
+}
+
+img[alt="logo"] {
+  max-width: 30%;
+  height: auto;
+}
+
+@media (max-width: 600px) {
+  img[alt="logo"] {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .cta-button {
+    font-size: 0.5rem;
+    padding: 0px;
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+}
+
+
+
+.cta-button {
+  animation: glow 1.5s infinite ease-in-out;
+}
 
     h1 {
       text-align: center;
-      color: #00ff88;
-      text-shadow: 0 0 5px #22ff99;
+      color: #00f0FF;
     }
 
     h2 {
       text-align: center;
       font-size: large;
-      color: #ccffcc;
-      margin-top: -1rem;
       margin-bottom: 40px;
+      color: #ffffff;
+      margin-top: -1rem;
     }
 
     .cta-button {
       display: block;
       text-align: center;
-      background: linear-gradient(90deg, #00ff99, #00cc66);
-      color: #002d13;
+      background: #00f0FF;
+      color: #0F013F;
       padding: 15px;
       font-size: 1.2rem;
       font-weight: bold;
       border-radius: 12px;
       text-decoration: none;
       margin-top: 30px;
-      box-shadow: 0 0 15px #00ff88;
+      box-shadow: 0 0 10px #00f0FF;
       transition: all 0.3s ease-in-out;
     }
 
     .cta-button:hover {
-      background: linear-gradient(90deg, #33ff99, #00cc66);
-      box-shadow: 0 0 30px #00ff88;
+      background: #00e6d2;
+      box-shadow: 0 0 25px #00f0FF;
     }
 
     .footer-note {
       text-align: center;
-      margin-top: 40px;
-      color: #d6ffd6;
-    }
-
-    footer {
-      text-align: center;
-      color: #aaffaa;
-      margin-top: 1rem;
-      font-size: 0.85rem;
-    }
-
-    .countdown {
-      color: #ccff33;
-      font-size: 1.1rem;
+      margin-top: 30px;
+      color: yellow;
     }
 
     @media (max-width: 600px) {
-      .container { padding: 15px; }
-      h1 { font-size: 1.2rem; }
+      .container { padding: 0px; }
+      h1 { font-size: 1.0rem; }
       h2 { font-size: 1rem; }
-      .cta-button { font-size: 0.9rem; padding: 10px; }
-      img[alt="logo"] { max-width: 100%; }
+      a{font-size: 0.4rem;}
     }
+  
+    
+    /* --- Preloader Container --- */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #00031d, #030838);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.6s ease;
+}
 
-    #preloader {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: linear-gradient(to right, #002d13, #004d25);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      opacity: 1;
-      transition: opacity 0.6s ease;
-    }
+/* --- Central Wrapper --- */
+.preloader-wrapper {
+  position: relative;
+  width: 130px;
+  height: 130px;
+}
 
-    .preloader-wrapper {
-      position: relative;
-      width: 130px;
-      height: 130px;
-    }
+/* --- Pulsing Glow Ring --- */
+.pulse-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: rgba(0, 240, 255, 0.15);
+  box-shadow: 0 0 20px #00f0ff, 0 0 40px #00f0ff, 0 0 60px #00f0ff;
+  animation: pulse 2s infinite ease-in-out;
+  z-index: 1;
+}
 
-    .pulse-ring {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
-      background: rgba(0, 255, 100, 0.1);
-      box-shadow: 0 0 30px #00ff99, 0 0 40px #00cc66;
-      animation: pulse 2s infinite ease-in-out;
-      z-index: 1;
-    }
+/* --- Dashed Circular Ring --- */
+.dashed-ring {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 2px dashed #00f0ff;
+  animation: spin-ring 5s linear infinite;
+  z-index: 2;
+  box-shadow: 0 0 10px #00f0ff;
+}
 
-    .dashed-ring {
-      position: absolute;
-      top: 5px;
-      left: 5px;
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      border: 2px dashed #00ff88;
-      animation: spin-ring 5s linear infinite;
-      z-index: 2;
-    }
+/* --- Rotating Logo --- */
+.rotating-logo {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: rotate 3s linear infinite;
+  filter: drop-shadow(0 0 10px #00f0ff);
+  z-index: 3;
+}
 
-    .rotating-logo {
-      width: 80px;
-      height: 80px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      animation: rotate 3s linear infinite;
-      filter: drop-shadow(0 0 10px #00ff88);
-      z-index: 3;
-    }
+/* --- Animations --- */
+@keyframes rotate {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
 
-    @keyframes rotate {
-      0% { transform: translate(-50%, -50%) rotate(0deg); }
-      100% { transform: translate(-50%, -50%) rotate(360deg); }
-    }
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.4;
+  }
+}
 
-    @keyframes pulse {
-      0%, 100% {
-        transform: scale(1);
-        opacity: 0.7;
-      }
-      50% {
-        transform: scale(1.1);
-        opacity: 0.4;
-      }
-    }
+@keyframes spin-ring {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+}
 
-    @keyframes spin-ring {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(-360deg); }
-    }
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 
   </style>
 </head>
 
 <body>
-  <div id="preloader">
-    <div class="preloader-wrapper">
-      <div class="pulse-ring"></div>
-      <div class="dashed-ring"></div>
-      <img src="logo.png" alt="Knockplay Logo" class="rotating-logo" />
-    </div>
-  </div>
-
+    <div id="preloader">
+        <div class="preloader-wrapper">
+          <div class="pulse-ring"></div>
+          <div class="dashed-ring"></div>
+          <img src="assets/logo.png" alt="Knockplay Logo" class="rotating-logo" />
+        </div>
+      </div>
+      
+      
+    
+    
   <div class="container">
-    <div style="text-align: center;">
-      <div class="countdown" id="countdown">⏳ countdown...</div>
-    </div>
+    <div style="text-align: center; display: block;">
+        <div class="countdown" id="countdown" style="color: yellow;">⏳countdown...</div>
+        
+      </div>
 
-    <img src="logo.png" alt="KNOCKPLAY Tournament Logo">
+    <!-- <img src="logo.png" alt="logo" width="200px" height="auto" style="display: block; margin: 1rem auto ;"> -->
+    <img src="assets/logo.png" alt="KNOCKPLAY Tournament Logo" style="display: block; margin: 1rem auto; max-width: 30%; height: auto;">
 
-    <h1>🎮 KNOCKPLAY PCE PES TOURNAMENT 🎮</h1>
+    <h1>🎮 KNOCKPLAY FIFA TOURNAMENT 🎮</h1>
+    
     <h2>Hit them and knock them out!</h2>
 
-    <a class="cta-button" 
-      href="https://forms.gle/LhyftQmmWETcNR2t7" 
-      target="_blank"
-      aria-label="Register for Knockplay FIFA Tournament via Google Form">
-      Register 
-    </a>
+    <!-- ✅ Google Form Button -->
+   
+            <a class="cta-button" 
+                href="https://forms.gle/8ZMccS5bPSFDAJpr8" 
+                target="_blank"
+                aria-label="Register for Knockplay FIFA Tournament via Google Form">
+                Register 
+            </a>
 
-    <div class="footer-note">
-      You will be added to our WhatsApp group for updates on tournaments.
+
+    <!-- <p style="text-align:center; margin-top: 20px;">Secure submission via Google Forms</p> -->
+
+    <div class="footer-note" style="margin-top: 5rem;">
+       You will be added to our WhatsApp group for updates on tournaments
     </div>
-
-    <footer>
-      © 2025 Liokin Media Hub - Our Right is Ours.
-    </footer>
+    <footer style="margin: auto; display: flex; justify-content: center; margin-top: 1rem;">
+        © 2025 Liokin Media Hub - Our Right is Ours.
+      </footer>
   </div>
+
 
   <script>
     const countdownElement = document.getElementById('countdown');
-    const targetDate = new Date("2025-07-28T18:00:00");
-
+    const targetDate = new Date("2025-07-11T18:00:00"); // Set your tournament date here
+  
     function updateCountdown() {
       const now = new Date();
       const diff = targetDate - now;
-
+  
       if (diff <= 0) {
         countdownElement.textContent = "⏱ Registration Closed";
         return;
       }
-
+  
       const days = Math.floor(diff / (1000 * 60 * 60 * 24));
       const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
       const minutes = Math.floor((diff / 1000 / 60) % 60);
       const seconds = Math.floor((diff / 1000) % 60);
-
+  
       countdownElement.textContent = `⏳ ${days}d ${hours}h ${minutes}m ${seconds}s left`;
     }
+  
+    updateCountdown(); // Initial call
+    setInterval(updateCountdown, 1000); // Update every second
+  </script>
 
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-
+<script>
     window.addEventListener('load', function () {
       const preloader = document.getElementById('preloader');
+      preloader.style.transition = 'opacity 0.6s ease';
       preloader.style.opacity = '0';
-
+  
       setTimeout(() => {
         preloader.style.display = 'none';
-      }, 3000);
+      }, 3000); // smoother and faster transition
     });
   </script>
+  
+  
+  
 </body>
+
+
 </html>
+
