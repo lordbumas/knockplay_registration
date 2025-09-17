@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KNOCKPLAY FIFA TOURNAMENT</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="5tg.png" />
+  <link rel="icon" type="image/png" href="assets/5tg.png" />
   <meta name="description" content="Register now for the KNOCKPLAY FIFA TOURNAMENT and compete with the best. Limited slots available!">
 
   <style>
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(to right, #030838, #00031d);
+      background: linear-gradient(163deg,rgba(0, 0, 255, 1) 0%, rgba(2, 0, 36, 1) 100%);
       color: #fff;
       padding: 20px;
       height: 100vh;
@@ -23,10 +23,10 @@
 
     .container {
   max-width: 800px;
-  background: #030838;
+  background: #000a61;
   padding: 30px;
   border-radius: 16px;
-  box-shadow: 0 0 10px rgb(237, 250, 63), 0 0 20px rgb(4, 4, 199);
+  box-shadow: 0 0 10px rgb(0, 255, 200), 0 0 20px cyan;
   animation: fadeInUp 1s ease-in-out;
 }
 
@@ -169,8 +169,8 @@ img[alt="logo"] {
 
 /* --- Rotating Logo --- */
 .rotating-logo {
-  width: 280px;
-  height: 180px;
+  width: 80px;
+  height: 80px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -215,7 +215,7 @@ img[alt="logo"] {
         <div class="preloader-wrapper">
           <div class="pulse-ring"></div>
           <div class="dashed-ring"></div>
-          <img src="color_logo.png" alt="Knockplay Logo" class="rotating-logo" />
+          <img src="assets/logo.png" alt="Knockplay Logo" class="rotating-logo" />
         </div>
       </div>
       
@@ -224,21 +224,21 @@ img[alt="logo"] {
     
   <div class="container">
     <div style="text-align: center; display: block;">
-        <div class="countdown" id="countdown" style="color: yellow;">⏳countdown...</div>
+        <div class="countdown" id="countdown" style="color: rgb(0, 247, 255);">⏳countdown...</div>
         
       </div>
 
     <!-- <img src="logo.png" alt="logo" width="200px" height="auto" style="display: block; margin: 1rem auto ;"> -->
-    <img src="logo.png" alt="KNOCKPLAY Tournament Logo" style="display: block; margin: 1rem auto; max-width: 30%; height: auto;">
+    <img src="assets/logo.png" alt="KNOCKPLAY Tournament Logo" style="display: block; margin: 1rem auto; max-width: 30%; height: auto;">
 
-    <h1>🎮 KNOCKPLAY FIFA TOURNAMENT 🎮</h1>
+    <h1> KNOCKPLAY FIFA TOURNAMENT </h1>
     
     <h2>Hit them and knock them out!</h2>
 
     <!-- ✅ Google Form Button -->
    
             <a class="cta-button" 
-                href="https://forms.gle/8ZMccS5bPSFDAJpr8" 
+                href="https://forms.gle/UQWZyMwXZpPQB2xY9" 
                 target="_blank"
                 aria-label="Register for Knockplay FIFA Tournament via Google Form">
                 Register 
@@ -258,7 +258,7 @@ img[alt="logo"] {
 
   <script>
     const countdownElement = document.getElementById('countdown');
-    const targetDate = new Date("2025-08-09T08:16:00"); // Set your tournament date here
+    const targetDate = new Date("2025-07-11T18:00:00"); // Set your tournament date here
   
     function updateCountdown() {
       const now = new Date();
